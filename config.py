@@ -1,5 +1,7 @@
+from pydantic import PostgresDsn
+from pydantic import SecretStr
+from pydantic import computed_field
 from pydantic_settings import BaseSettings
-from pydantic import PostgresDsn, SecretStr, computed_field
 
 
 class Settings(BaseSettings):
@@ -27,7 +29,7 @@ class Settings(BaseSettings):
             password=self.POSTGRES_PASSWORD.get_secret_value(),
             host="db",
             port=5432,
-            path=self.POSTGRES_DB
+            path=self.POSTGRES_DB,
         )
 
 

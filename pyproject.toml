@@ -1,0 +1,32 @@
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "C90", "UP", "B", "SIM"]
+
+ignore = ["B008"]
+
+[tool.ruff.lint.isort]
+force-single-line = true

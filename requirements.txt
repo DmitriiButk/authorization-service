@@ -4,10 +4,11 @@ pydantic
 pydantic-settings
 sqlalchemy
 psycopg2-binary
-passlib
+passlib==1.7.4
+bcrypt==3.2.2
 python-jose
 python-multipart
 email-validator
-bcrypt
 alembic
 pyjwt
+ruff

@@ -1,8 +1,13 @@
-from sqlalchemy import Boolean, Column, String, DateTime
-from sqlalchemy.sql import func
 import uuid
 
 from app.database.database import Base
+from app.database.models.rbac import user_roles
+from sqlalchemy import Boolean
+from sqlalchemy import Column
+from sqlalchemy import DateTime
+from sqlalchemy import String
+from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 
 class User(Base):
@@ -15,3 +20,5 @@ class User(Base):
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
+    roles = relationship("Role", secondary=user_roles, back_populates="users")
